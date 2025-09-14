@@ -15,9 +15,10 @@ jobs:
       - name: Deploy via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          server: ${{ vars.DH_HOST }}
-          username: ${{ vars.DH_USER }}
+          server: ${{ secrets.DH_HOST }}
+          username: ${{ secrets.DH_USER }}
           ssh_private_key: ${{ secrets.DH_KEY }}
-          local_path: "./"          # everything in repo
-          remote_path: "/home/${{ vars.DH_USER }}/jmh2025.xyz"
+          port: 22
+          local_path: "./"                  # everything in repo
+          remote_path: "/home/${{ secrets.DH_USER }}/jmh2025.xyz"
           args: "-o StrictHostKeyChecking=no"

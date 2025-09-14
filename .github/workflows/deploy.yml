@@ -18,7 +18,6 @@ jobs:
           server: ${{ secrets.DH_HOST }}
           username: ${{ secrets.DH_USER }}
           ssh_private_key: ${{ secrets.DH_KEY }}
-          port: 22
           local_path: "./"                  # everything in repo
           remote_path: "/home/${{ secrets.DH_USER }}/jmh2025.xyz"
           args: "-o StrictHostKeyChecking=no"

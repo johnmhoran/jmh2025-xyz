@@ -38,7 +38,7 @@ jobs:
       - name: Add deployment timestamp
         run: |
           TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
-          sed -i "s/{{DEPLOY_TIMESTAMP}}/$TIMESTAMP/" website/index.html
+          sed -i "s/{{DEPLOY_TIMESTAMP}}/$TIMESTAMP/" index.html
 
       - name: Deploy via rsync
         run: |

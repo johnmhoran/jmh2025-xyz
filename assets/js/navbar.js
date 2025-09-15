@@ -38,13 +38,26 @@ document.getElementById("navbar").innerHTML = `
 // });
 
 // Highlight active link
+// let currentPage = window.location.pathname.split("/").pop();
+// if (currentPage === "") {
+//   currentPage = "index.html"; // default fallback
+// }
+
+// document.querySelectorAll(".nav-link").forEach(link => {
+//   if (link.getAttribute("href") === currentPage) {
+//     link.classList.add("active");
+//   }
+// });
+
+// Highlight active link
 let currentPage = window.location.pathname.split("/").pop();
 if (currentPage === "") {
-  currentPage = "index.html"; // default fallback
+  currentPage = "index.html"; // handle root
 }
 
 document.querySelectorAll(".nav-link").forEach(link => {
-  if (link.getAttribute("href") === currentPage) {
+  const href = link.getAttribute("href");
+  if (href === currentPage || (href === "/" && currentPage === "index.html")) {
     link.classList.add("active");
   }
 });

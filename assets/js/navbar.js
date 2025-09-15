@@ -9,6 +9,7 @@ document.getElementById("navbar").innerHTML = `
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
+
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
@@ -29,7 +30,19 @@ document.getElementById("navbar").innerHTML = `
 `;
 
 // Highlight active link
-const currentPage = window.location.pathname.split("/").pop();
+// const currentPage = window.location.pathname.split("/").pop();
+// document.querySelectorAll(".nav-link").forEach(link => {
+//   if (link.getAttribute("href") === currentPage) {
+//     link.classList.add("active");
+//   }
+// });
+
+// Highlight active link
+let currentPage = window.location.pathname.split("/").pop();
+if (currentPage === "") {
+  currentPage = "index.html"; // default fallback
+}
+
 document.querySelectorAll(".nav-link").forEach(link => {
   if (link.getAttribute("href") === currentPage) {
     link.classList.add("active");

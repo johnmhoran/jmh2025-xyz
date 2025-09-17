@@ -38,12 +38,26 @@ footer {
     border: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color);
 }
 
+.accordion-item:focus {
+    border: solid 1px #ff0000;
+}
+
+/* === */
+
 .accordion-button {
   background-color: #e9ecef; /* Replace with your desired color */
   background-color: #ffffff;
 
+  /* border: solid 1px #009900;
+  border-bottom: none; */
+
   color: #0066ff;
   font-weight: 700;
+}
+
+.accordion-button:active {
+  border: solid 1px #ffcc00;
+  border-bottom: none;
 }
 
 .accordion-button:not(.collapsed) {
@@ -54,6 +68,10 @@ footer {
   background-color: #c8c8c8;
   /* background-color: #202020; */
   border: none;
+
+  border: solid 1px #ff0000;
+  border-bottom: none;
+
   box-shadow: none;
 
   color: #ffffff;
@@ -63,5 +81,14 @@ footer {
 
 .accordion-button:focus {
     border: none;
+
+  border: solid 1px #0066ff;
+  border-bottom: none;
+
     box-shadow: none;
+}
+
+.accordion-button.collapsed {
+  border-color: transparent; /* Example: red */
+  border-color: #009933;
 }
